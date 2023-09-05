@@ -24,10 +24,14 @@ while i < len(codeText):
         endIdx = method.findEndIdxYou(codeText, i)
         tokenList.append(codeText[i:endIdx+1])
         i = endIdx
-    # elif codeText[i] == 'D':
-    #     endIdx = method.findEndIdxDateWithMe(codeText, i)
-    #     i = endIdx
-    #     tokenList.append(codeText[i:endIdx+1])
+    elif codeText[i] == 'B':
+        endIdx = method.findEndIdxBecause(codeText, i)
+        tokenList.append(codeText[i:endIdx+1])
+        i = endIdx
+    elif codeText[i] == 'D':
+        endIdx = method.findEndIdxDateWithMe(codeText, i)
+        tokenList.append(codeText[i:endIdx+1])
+        i = endIdx
     i+=1
 
 print(tokenList)
